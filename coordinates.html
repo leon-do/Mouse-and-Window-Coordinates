@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+	<div id=txtX></div>
+	<div id=txtY></div>
+	<br>
+	<div id=txtW></div>
+	<div id=txtH></div>
+	<br>
+	<div id=txt1></div>
+	<div id=txt2></div>
+</body>
+</html>
+
+
+<script>
+
+window.onmousemove = getCoordinates;
+window.onresize = getDimensions;
+
+
+function getCoordinates(z){
+	//gets mouse coordinates
+	var x = z.clientX;
+	var y = z.clientY;
+
+	// displays mouse coordinates
+	document.getElementById("txtX").innerHTML = "x: " + x + "px";
+	document.getElementById("txtY").innerHTML = "y: " + y + "px";
+
+	//get window dimensions
+	var w = window.innerWidth;
+	var h = window.innerHeight;
+
+	// displays initial window dimensions
+	document.getElementById("txtW").innerHTML = "width: " + w + "px";
+	document.getElementById("txtH").innerHTML = "height: " + h + "px";
+
+	// get % and displays
+	document.getElementById("txt1").innerHTML = 
+		"width: " + Math.round(x/w*100) + "%";
+	document.getElementById("txt2").innerHTML = 
+		"height: " + Math.round(y/h*100)+ "%";
+
+}
+
+
+
+
+function getDimensions(){
+	//gets window dimensions on resize
+	var w = window.innerWidth;
+	var h = window.innerHeight;
+
+	document.getElementById("txtW").innerHTML = "width: " + w + "px";
+	document.getElementById("txtH").innerHTML = "height: " + h + "px";
+}
+
+
+
+</script>
