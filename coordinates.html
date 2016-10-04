@@ -39,11 +39,13 @@ function getCoordinates(z){
 	document.getElementById("txtW").innerHTML = "width: " + w + "px";
 	document.getElementById("txtH").innerHTML = "height: " + h + "px";
 
-	// get % and displays
-	document.getElementById("txt1").innerHTML = 
-		"width: " + Math.round(x/w*100) + "%";
-	document.getElementById("txt2").innerHTML = 
-		"height: " + Math.round(y/h*100)+ "%";
+	// get %
+	var percentX = Math.round(x/w*100);
+	var percentY = Math.round(y/h*100);
+
+	// display %
+	document.getElementById("txt1").innerHTML = "width: " + percentX + "%";
+	document.getElementById("txt2").innerHTML = "height: " + percentY + "%";
 
 }
 
@@ -55,6 +57,7 @@ function getDimensions(){
 	var w = window.innerWidth;
 	var h = window.innerHeight;
 
+	// display window dimensions
 	document.getElementById("txtW").innerHTML = "width: " + w + "px";
 	document.getElementById("txtH").innerHTML = "height: " + h + "px";
 }
